@@ -7,7 +7,7 @@ RUN echo "deb http://qgis.org/ubuntugis-nightly xenial main" >> /etc/apt/sources
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update 
-RUN apt-get build-dep -y qgis &&\
+RUN apt-get build-dep -y qgis 
 RUN apt-get install -y locales locales-all && \
     rm -rf /var/lib/apt/lists/*
 #--no-install-recommends
