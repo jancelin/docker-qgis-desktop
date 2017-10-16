@@ -3,11 +3,11 @@ MAINTAINER Julien ANCELIN
 
 ENV LANG C.UTF-8
 
-RUN echo "deb http://qgis.org/ubuntugis-nightly xenial main" >> /etc/apt/sources.list
+RUN echo "deb http://qgis.org/debian-nightly xenial main" >> /etc/apt/sources.list
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update && \
-    apt-get install -y gdal-abi-2-2-1 libgdal20 libqgis-app2.99.0 libqgis-core2.99.0 libqgis-gui2.99.0 \
+    apt-get install -y \
     python-qgis qgis-providers qgis-plugin-grass qgis  \
     locales locales-all && \
     rm -rf /var/lib/apt/lists/*
