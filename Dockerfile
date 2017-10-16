@@ -2,7 +2,7 @@ FROM ubuntu:zesty
 MAINTAINER Julien ANCELIN
 
 ENV LANG C.UTF-8
-
+RUN apt-get install -y wget
 RUN echo "deb http://qgis.org/ubuntugis-nightly zesty main" >> /etc/apt/sources.list
 RUN wget -O - http://qgis.org/downloads/qgis-2017.gpg.key | gpg --import
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
