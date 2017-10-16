@@ -3,7 +3,7 @@ MAINTAINER Julien ANCELIN
 
 ENV LANG C.UTF-8
 
-RUN echo "deb http://qgis.org/debian-ltr xenial main" >> /etc/apt/sources.list
+RUN echo "deb http://qgis.org/debian xenial main" >> /etc/apt/sources.list
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update && \
