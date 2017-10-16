@@ -3,12 +3,12 @@ MAINTAINER Julien ANCELIN
 
 ENV LANG C.UTF-8
 
-RUN echo "deb http://qgis.org/debian-nightly xenial main" >> /etc/apt/sources.list
+RUN echo "deb http://qgis.org/ubuntugis-nightly xenial main" >> /etc/apt/sources.list
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update && \
     apt-get install -y \
-    qgis3-dev  \
+    qgis  \
     locales locales-all && \
     rm -rf /var/lib/apt/lists/*
 #--no-install-recommends
