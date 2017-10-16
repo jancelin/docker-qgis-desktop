@@ -8,7 +8,7 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update && \
     apt-get install -y \
-    python-qgis qgis-providers qgis-provider-grass qgis  \
+    qgis3-dev  \
     locales locales-all && \
     rm -rf /var/lib/apt/lists/*
 #--no-install-recommends
