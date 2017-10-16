@@ -4,11 +4,10 @@ MAINTAINER Julien ANCELIN
 ENV LANG C.UTF-8
 
 RUN echo "deb http://qgis.org/ubuntugis-nightly zesty main" >> /etc/apt/sources.list
-RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
-RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45
 RUN apt-get update 
 #RUN apt-get build-dep -y  qgis 
-RUN apt-get install -y  qgis \
+RUN apt-get install -y  qgis python-qgis qgis-plugin-grass \
     locales locales-all && \
     rm -rf /var/lib/apt/lists/*
 #--no-install-recommends
