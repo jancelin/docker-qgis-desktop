@@ -3,6 +3,9 @@ MAINTAINER Julien ANCELIN
 
 ENV LANG C.UTF-8
 
+RUN apt-get -y update
+RUN apt-get install -y gnupg apt-transport-https ca-certificates
+
 RUN echo "deb http://qgis.org/debian xenial main" >> /etc/apt/sources.list
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
