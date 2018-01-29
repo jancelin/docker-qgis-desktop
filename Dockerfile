@@ -10,7 +10,7 @@ RUN echo "deb http://qgis.org/debian-nightly xenial main" >> /etc/apt/sources.li
 RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 RUN apt-get update && \
-    apt-get install -y qgis python-qgis qgis-plugin-grass \
+    apt-get install -y qgis python-qgis qgis-provider-grass \
     locales locales-all && \
     rm -rf /var/lib/apt/lists/*
 #--no-install-recommends
