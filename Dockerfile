@@ -11,8 +11,11 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv CAEB3DC3BDF7FB45
 RUN gpg --export --armor CAEB3DC3BDF7FB45 | apt-key add -
 
 # add qgis repositories for ltr
+RUN apt-get update && \
+    apt-get install wget
+
 RUN wget -O - https://qgis.org/downloads/qgis-2017.gpg.key | gpg --import
-RUN gpg --fingerprint CAEB3DC3BDF7FB45  |
+RUN gpg --fingerprint CAEB3DC3BDF7FB45  
 RUN echo "deb     https://qgis.org/ubuntu-ltr xenial main" >> /etc/apt/sources.list
 
 
