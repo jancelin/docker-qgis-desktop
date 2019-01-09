@@ -18,3 +18,6 @@ docker run --rm \
     -e HHHOME=${HOME} \
     --net=host \
     jancelin/docker-qgis-desktop
+# you can change this last line to pass  startup options to QGIS
+# If you want to use another location for qgis profile, you can do this for instance, using a .qgis2_docker directory instead of the default .qgis2 :
+#  jancelindocker-qgis-desktop:2.18 /start.sh --configpath /home/${USER_NAME}/.qgis2_docker
